@@ -80,10 +80,18 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 0.85rem;
-  background: var(--accent);
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-blue)
+  );
+  color: #020617;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
   box-shadow: 0 12px 30px rgba(45, 212, 191, 0.28);
-  object-fit: contain;
 }
+
 
 .brand-logo:not([src]) {
   color: #020617;
