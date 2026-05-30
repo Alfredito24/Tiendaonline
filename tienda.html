@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda - FishingStore</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">FishingStore</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <a href="carrito.html" class="cart-pill" aria-label="Ver carrito">
+        <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.3 6h15l-1.7 8.4a2 2 0 0 1-2 1.6H9a2 2 0 0 1-2-1.6L5.3 3.8H2" />
+          <circle cx="9.5" cy="20" r="1.5" />
+          <circle cx="17.5" cy="20" r="1.5" />
+        </svg>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="shop-page">
+    <section class="shop-hero">
+      <p class="section-label">Tienda</p>
+      <h1>Catálogo de pesca</h1>
+      <p>Productos basados en referencias reales: casting, spinning, cañas, señuelos y accesorios.</p>
+    </section>
+
+    <section class="store" id="tienda">
+      <div class="filter-bar" aria-label="Filtros de productos">
+        <button class="filter-button active" type="button" data-filter="todos">Todos</button>
+        <button class="filter-button" type="button" data-filter="casting">Casting</button>
+        <button class="filter-button" type="button" data-filter="spinning">Spinning</button>
+        <button class="filter-button" type="button" data-filter="caña">Cañas</button>
+        <button class="filter-button" type="button" data-filter="señuelo">Señuelos</button>
+        <button class="filter-button" type="button" data-filter="accesorio">Accesorios</button>
+      </div>
+
+      <div class="product-grid shop-grid">
+        <article class="product-card" data-category="casting">
+          <img src="caña.webp" alt="Combo pesca casting con caña y carrete" />
+          <span class="tag">Casting</span>
+          <h3>Combo Pesca Casting Medium Heavy</h3>
+          <p>Combo tipo casting con caña medium heavy y carrete para señuelos.</p>
+          <p class="price">$189.990</p>
+          <button class="cta-button add-to-cart" type="button" data-name="Combo Pesca Casting Medium Heavy" data-price="189990">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card" data-category="casting">
+          <img src="casting.webp" alt="Abu Garcia Carrete Casting Zata HS" />
+          <span class="tag">Casting</span>
+          <h3>Abu Garcia Zata HS</h3>
+          <p>Carrete casting low profile con relación 7.1:1 y 11 baleros.</p>
+          <p class="price">$361.990</p>
+          <button class="cta-button add-to-cart" type="button" data-name="Abu Garcia Zata HS" data-price="361990">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card" data-category="caña">
+          <img src="https://www.fiblink.com/cdn/shop/products/1_54df82bc-3942-47cd-ad79-967d0c8b8bb9_530x%402x.jpg?v=1478055130" alt="Caña Fiblink fibra de carbono 7 pies" />
+          <span class="tag">Caña</span>
+          <h3>Caña Fiblink Carbono 7 pies</h3>
+          <p>Caña portátil de 4 piezas en fibra de carbono para agua dulce y salada.</p>
+          <p class="price">$159.990</p>
+          <button class="cta-button add-to-cart" type="button" data-name="Caña Fiblink Carbono 7 pies" data-price="159990">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card" data-category="spinning">
+          <img src="carrete.webp" alt="Carrete spinning tamaño pequeño" />
+          <span class="tag">Spinning</span>
+          <h3>Carrete Spinning Tamaño Pequeño</h3>
+          <p>Carrete spinning compacto para cañas ligeras y pesca recreativa.</p>
+          <p class="price">$64.990</p>
+          <button class="cta-button add-to-cart" type="button" data-name="Carrete Spinning Tamaño Pequeño" data-price="64990">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card" data-category="señuelo">
+          <img src="señuelo.webp" alt="Señuelo 37 gramos 110 milímetros" />
+          <span class="tag">Señuelo</span>
+          <h3>Señuelo 37 g 110 mm</h3>
+          <p>Señuelo rígido para pesca de orilla y especies depredadoras.</p>
+          <p class="price">$42.990</p>
+          <button class="cta-button add-to-cart" type="button" data-name="Señuelo 37 g 110 mm" data-price="42990">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card" data-category="accesorio">
+          <img src="caja.jpg" alt="Caja organizadora de pesca" />
+          <span class="tag">Accesorio</span>
+          <h3>Caja Tackle Pro</h3>
+          <p>Organizador con señuelos, anzuelos, plomos y accesorios pequeños.</p>
+          <p class="price">$34.990</p>
+          <button class="cta-button add-to-cart" type="button" data-name="Caja Tackle Pro" data-price="34990">Agregar al carrito</button>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>FishingStore - Tienda de productos de pesca.</p>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const productCards = document.querySelectorAll(".product-card");
+    const cart = JSON.parse(localStorage.getItem("fishingstore-cart") || "[]");
+    const cartCount = document.getElementById("cart-count");
+
+    function renderCart() {
+      cartCount.textContent = cart.length;
+      localStorage.setItem("fishingstore-cart", JSON.stringify(cart));
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        productCards.forEach((card) => {
+          card.hidden = filter !== "todos" && card.dataset.category !== filter;
+        });
+      });
+    });
+
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+      button.addEventListener("click", () => {
+        cart.push({
+          name: button.dataset.name,
+          price: Number(button.dataset.price)
+        });
+        renderCart();
+      });
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>

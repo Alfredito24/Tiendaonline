@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito - FishingStore</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">FishingStore</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <a href="carrito.html" class="cart-pill" aria-label="Ver carrito">
+        <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.3 6h15l-1.7 8.4a2 2 0 0 1-2 1.6H9a2 2 0 0 1-2-1.6L5.3 3.8H2" />
+          <circle cx="9.5" cy="20" r="1.5" />
+          <circle cx="17.5" cy="20" r="1.5" />
+        </svg>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <section class="cart-hero">
+      <p class="section-label">Carrito</p>
+      <h1>Tu carrito de compras</h1>
+      <p>Revisa los productos seleccionados antes de confirmar tu pedido.</p>
+    </section>
+
+    <section class="cart-layout">
+      <div class="cart-box cart-box-large">
+        <ul id="cart-items">
+          <li class="empty-cart">Tu carrito está vacío.</li>
+        </ul>
+      </div>
+
+      <aside class="cart-summary">
+        <h2>Resumen</h2>
+        <div class="summary-line">
+          <span>Productos</span>
+          <strong id="summary-count">0</strong>
+        </div>
+        <div class="summary-line">
+          <span>Total</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+        <a href="tienda.html" class="hero-button">Seguir comprando</a>
+        <button id="clear-cart" type="button">Vaciar carrito</button>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>FishingStore - Carrito de compras.</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("fishingstore-cart") || "[]");
+    const cartItems = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const summaryCount = document.getElementById("summary-count");
+    const cartTotal = document.getElementById("cart-total");
+    const formatter = new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      maximumFractionDigits: 0
+    });
+
+    function saveCart() {
+      localStorage.setItem("fishingstore-cart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      cartItems.innerHTML = "";
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<li class="empty-cart">Tu carrito está vacío.</li>';
+      } else {
+        cart.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <span>${item.name}</span>
+            <strong>${formatter.format(item.price)}</strong>
+            <button class="remove-item" type="button" data-index="${index}">Quitar</button>
+          `;
+          cartItems.appendChild(li);
+        });
+      }
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartCount.textContent = cart.length;
+      summaryCount.textContent = cart.length;
+      cartTotal.textContent = formatter.format(total);
+      saveCart();
+    }
+
+    cartItems.addEventListener("click", (event) => {
+      const button = event.target.closest(".remove-item");
+
+      if (!button) {
+        return;
+      }
+
+      cart.splice(Number(button.dataset.index), 1);
+      renderCart();
+    });
+
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      cart.length = 0;
+      renderCart();
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>

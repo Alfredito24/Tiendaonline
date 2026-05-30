@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matriz DOFA - FishingStore</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">FishingStore</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <a href="carrito.html" class="cart-pill" aria-label="Ver carrito">
+        <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.3 6h15l-1.7 8.4a2 2 0 0 1-2 1.6H9a2 2 0 0 1-2-1.6L5.3 3.8H2" />
+          <circle cx="9.5" cy="20" r="1.5" />
+          <circle cx="17.5" cy="20" r="1.5" />
+        </svg>
+        <span>0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="dofa-page">
+    <section class="dofa" id="dofa">
+      <div class="section-header">
+        <p class="section-label">Matriz DOFA</p>
+        <h2>Análisis estratégico de FishingStore</h2>
+        <p class="section-intro">Este documento presenta las fortalezas, oportunidades, debilidades y amenazas para el negocio de pesca FishingStore, diseñado como un proyecto de e-commerce especializado.</p>
+      </div>
+      <div class="dofa-grid">
+        <div class="dofa-card fortalezas">
+          <h3>Fortalezas</h3>
+          <ul>
+            <li>Catálogo especializado en pesca que satisface necesidades específicas.</li>
+            <li>Diseño web moderno y experiencia de usuario clara.</li>
+            <li>Productos visualmente atractivos con descripciones precisas.</li>
+            <li>Carrito simulado y filtros que refuerzan la experiencia de tienda online.</li>
+          </ul>
+        </div>
+        <div class="dofa-card oportunidades">
+          <h3>Oportunidades</h3>
+          <ul>
+            <li>Creciente interés en actividades al aire libre y pesca deportiva.</li>
+            <li>Posibilidad de ampliar la oferta a accesorios, equipo y ropa especializada.</li>
+            <li>Alianzas con clubes de pesca, eventos y marcas del sector.</li>
+            <li>Promoción en redes sociales con contenido educativo para pescadores.</li>
+          </ul>
+        </div>
+        <div class="dofa-card debilidades">
+          <h3>Debilidades</h3>
+          <ul>
+            <li>Escala del proyecto pequeña frente a competidores grandes.</li>
+            <li>Falta de visibilidad inicial en canales digitales y redes sociales.</li>
+            <li>Dependencia de fotos e información simulada en la fase de propuesta.</li>
+            <li>No cuenta todavía con pasarela de pago ni inventario real conectado.</li>
+          </ul>
+        </div>
+        <div class="dofa-card amenazas">
+          <h3>Amenazas</h3>
+          <ul>
+            <li>Competencia de marketplaces establecidos con mayor alcance.</li>
+            <li>Variación en costos de envío y retrasos logísticos.</li>
+            <li>Preferencia de consumidores por marcas con reputación sólida.</li>
+            <li>Cambios de precio en proveedores de productos importados.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="center-action">
+        <a href="index.html" class="hero-button">Regresar al inicio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>FishingStore - Matriz DOFA dedicada.</p>
+  </footer>
+  <script>
+    const cart = JSON.parse(localStorage.getItem("fishingstore-cart") || "[]");
+    document.querySelector(".cart-pill span").textContent = cart.length;
+  </script>
+</body>
+</html>

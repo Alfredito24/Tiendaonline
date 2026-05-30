@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FishingStore, tienda online de pesca con cañas, carretes, señuelos y accesorios para pescadores principiantes y expertos." />
+  <title>FishingStore | Tienda online de pesca</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <img src="logo.png" class="brand-logo" alt="Logo FishingStore" />
+        FishingStore
+      </a>
+      <nav class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="carrito.html" class="cart-pill" aria-label="Ver carrito">
+        <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.3 6h15l-1.7 8.4a2 2 0 0 1-2 1.6H9a2 2 0 0 1-2-1.6L5.3 3.8H2" />
+          <circle cx="9.5" cy="20" r="1.5" />
+          <circle cx="17.5" cy="20" r="1.5" />
+        </svg>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">FishingStore</p>
+        <h1>Tu tienda online de pesca especializada</h1>
+        <p class="hero-subtitle">Equipo de pesca con señuelos, cañas, carretes y accesorios seleccionados para tus mejores salidas al río, lago o embalse.</p>
+        <div class="hero-actions">
+          <a href="dofa.html" class="hero-button">Ver matriz DOFA</a>
+          <a href="tienda.html" class="hero-button ghost">Ir a la tienda</a>
+        </div>
+        <div class="group-info">
+          <p><strong>Integrante del grupo:</strong> Alfredo Jose Bolívar Ortega</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main>
+    <section class="store">
+      <div class="section-header">
+        <p class="section-label">Inicio</p>
+        <h2>Productos destacados</h2>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="conbo.jpg" alt="Combo pesca casting con caña y carrete" />
+          <span class="tag">Casting</span>
+          <h3>Combo Pesca Casting Medium Heavy</h3>
+          <p>Combo tipo casting con caña medium heavy y carrete para señuelos.</p>
+          <p class="price">$189.990</p>
+          <a class="cta-button" href="tienda.html">Ver en tienda</a>
+        </article>
+        <article class="product-card">
+          <img src="casting.webp" alt="Abu Garcia Zata HS carrete casting" />
+          <span class="tag">Casting</span>
+          <h3>Abu Garcia Zata HS</h3>
+          <p>Carrete casting low profile con relación 7.1:1 y 11 baleros.</p>
+          <p class="price">$361.990</p>
+          <a class="cta-button" href="tienda.html">Ver en tienda</a>
+        </article>
+        <article class="product-card">
+          <img src="cañas.jpg" alt="Caña Fiblink carbono 7 pies" />
+          <span class="tag">Cañas</span>
+          <h3>Caña Fiblink Carbono 7 pies</h3>
+          <p>Caña portátil de 4 piezas en fibra de carbono para agua dulce y salada.</p>
+          <p class="price">$159.990</p>
+          <a class="cta-button" href="tienda.html">Ver en tienda</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-header">
+        <p class="section-label">Página de inicio</p>
+        <h2>FishingStore: calidad, estilo y confianza</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>FishingStore es un comercio electrónico creado para pescadores que buscan productos claros, confiables y fáciles de elegir. El catálogo está pensado para principiantes y expertos, con precios simulados y descripciones útiles.</p>
+          <p>La propuesta combina tienda, atención al cliente y análisis estratégico para presentar un negocio digital completo, ordenado y listo para crecer.</p>
+        </div>
+        <div class="feature-list">
+          <article>
+            <span>01</span>
+            <h3>Compra sencilla</h3>
+            <p>Productos organizados por categoría y llamados de compra directos.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Catálogo especializado</h3>
+            <p>Equipo enfocado en pesca recreativa y deportiva.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Atención digital</h3>
+            <p>Formulario y redes sociales para resolver dudas rápidamente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-header">
+        <p class="section-label">Clientes</p>
+        <h2>Opiniones de pescadores</h2>
+      </div>
+      <div class="testimonial-grid">
+        <article>
+          <p>"La tienda es clara y los productos se entienden rápido. Ideal para elegir sin complicarse."</p>
+          <strong>Daniel R.</strong>
+        </article>
+        <article>
+          <p>"Me gustó que tenga productos para empezar y también opciones para pesca deportiva."</p>
+          <strong>Camila M.</strong>
+        </article>
+        <article>
+          <p>"La tienda se ve ordenada y los productos son fáciles de comparar antes de comprar."</p>
+          <strong>Juan P.</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="section-header">
+        <p class="section-label">Página de contacto</p>
+        <h2>Hablemos de pesca</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-details">
+          <p>¿Tienes preguntas sobre los productos o quieres comprar? Contáctanos y te responderemos pronto.</p>
+          <ul>
+            <li><strong>Correo:</strong> fstore@gmail.com</li>
+            <li><strong>WhatsApp:</strong> 321-894-8939</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <label>
+            Nombre completo
+            <input type="text" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Correo electrónico
+            <input type="email" placeholder="correo@ejemplo.com" required />
+          </label>
+          <label>
+            Producto de interés
+            <select required>
+              <option value="">Selecciona una opción</option>
+              <option>Señuelos</option>
+              <option>Carretes</option>
+              <option>Accesorios</option>
+            </select>
+          </label>
+          <label>
+            Mensaje
+            <textarea rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </label>
+          <button type="submit">Enviar mensaje</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>FishingStore - Tienda de equipo de pesca con estilo y confianza.</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("fishingstore-cart") || "[]");
+    const cartCount = document.getElementById("cart-count");
+
+    function renderCart() {
+      cartCount.textContent = cart.length;
+      localStorage.setItem("fishingstore-cart", JSON.stringify(cart));
+    }
+
+    document.getElementById("contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      document.getElementById("form-status").textContent = "Mensaje enviado correctamente. Te contactaremos pronto.";
+      event.currentTarget.reset();
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
